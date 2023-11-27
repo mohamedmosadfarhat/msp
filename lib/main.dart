@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mspflutter1/home.dart';
+import 'package:mspflutter1/home_page.dart';
+import 'package:mspflutter1/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,39 +11,32 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "flutter",
-            style: TextStyle(fontSize: 30, color: Colors.black),
-          ),
-          backgroundColor: Colors.amber,
-        ),
-        body: Column(
-          children: [
-            Row(
-              children: [
-                app("BMW"),
-                SizedBox(
-                  width: 10,
-                ),
-                app("Ferrari")
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              color: Colors.amber,
-              width: double.infinity,
-              child: Image.asset(
-                "images/car.jpeg",
-                fit: BoxFit.fill,
-              ),
-            )
-          ],
-        ),
-      ),
+      home: HomePage(),
+      routes: {
+        Login.id: (context) => Login(),
+       
+        },
     );
   }
 }
+//  ListView.builder(
+//               itemCount: data.length,
+//               itemBuilder: (context, index) {
+//                 return Column(
+//                   children: [
+//                     Text(data[index].title),
+//                     Image.asset(data[index].imageurl),
+//                   ],
+//                 );
+//               })),
+
+// GridView.builder(
+//               itemCount: 5,
+//               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                 crossAxisCount: 2,
+//                 crossAxisSpacing: 10,
+//                 childAspectRatio: 1.5,
+//               ),
+//               itemBuilder: (context, index) {
+//                 return Image.asset("images/car.jpeg");
+//               }),
