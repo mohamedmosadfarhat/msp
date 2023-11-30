@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mspflutter1/homepage.dart';
 
 class Login extends StatelessWidget {
   //const Login({Key? key}) : super(key: key);
@@ -30,8 +31,10 @@ class Login extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed("homepage",
-                      arguments: LoginArgs(email: email, username: username));
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                    return HomePage(email,username);
+                  }));
                 },
                 child: Text("login"),
               ),
@@ -43,8 +46,3 @@ class Login extends StatelessWidget {
   }
 }
 
-class LoginArgs {
-  String email;
-  String username;
-  LoginArgs({required this.email, required this.username});
-}
