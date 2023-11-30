@@ -19,24 +19,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-//  ListView.builder(
-//               itemCount: data.length,
-//               itemBuilder: (context, index) {
-//                 return Column(
-//                   children: [
-//                     Text(data[index].title),
-//                     Image.asset(data[index].imageurl),
-//                   ],
-//                 );
-//               })),
-
-// GridView.builder(
-//               itemCount: 5,
-//               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-//                 crossAxisCount: 2,
-//                 crossAxisSpacing: 10,
-//                 childAspectRatio: 1.5,
-//               ),
-//               itemBuilder: (context, index) {
-//                 return Image.asset("images/car.jpeg");
-//               }),
